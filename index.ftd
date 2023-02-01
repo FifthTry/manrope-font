@@ -1,7 +1,7 @@
 -- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fifthtry.github.io/manrope-font/assets as manrope-assets
 -- import: fifthtry.github.io/package-doc/typography as tf
--- import: fpm
+-- import: fastn
 
 
 
@@ -52,11 +52,11 @@ This component consist of Google manrope font with all it's styles from Thin-100
 
 -- pd.hidden-code: How to use
 
-include fifthtry.github.io/manrope-font package into FPM.ftd file
+include fifthtry.github.io/manrope-font package into fastn.ftd file
 
-\-- fpm.dependency: fifthtry.github.io/manrope-font/assets as manrope
+\-- fastn.dependency: fifthtry.github.io/manrope-font/assets as manrope
 
-\-- fpm.auto-import: manrope
+\-- fastn.auto-import: manrope
 
 Inside your .ftd file to change for any specific token use:
 

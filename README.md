@@ -3,6 +3,7 @@
 This repository contains a [fpm font package](https://fpm.dev/featured/fonts/) containing [Google Font: 
 Manrope](https://fonts.google.com/specimen/maprope/about).
 
+
 Manrope is an open-source modern sans-serif font family, designed by Mikhail Sharanda in 2018. In 2019, Mirko Velimirovic worked with Mikhail Sharanda to convert Manrope into a variable font.
 
 Designers: Mikhail Sharanda, Principal design
@@ -13,10 +14,10 @@ Designers: Mikhail Sharanda, Principal design
 
 TLRD:
 
-Include fifthtry.github.io/manrope-font package into `FPM.ftd` file:
+Include fifthtry.github.io/manrope-font package into `fastn.ftd` file:
 
 ```ftd
-;-- fpm.dependency: fifthtry.github.io/manrope-font
+;-- fastn.dependency: fifthtry.github.io/manrope-font
 ```
 
 Inside your `FPM/config.ftd` use the font:
@@ -24,7 +25,7 @@ Inside your `FPM/config.ftd` use the font:
 ```ftd
 ;-- import: fifthtry.github.io/manrope-font/assets as manrope
 
-;-- fpm.type.headline-small: $manrope.fonts.Manrope
+;-- fastn.type.headline-small: $manrope.fonts.Manrope
 ```
 
 Now if in any file you do:
@@ -38,7 +39,7 @@ You will see the `manrope` font.
 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://fpm.dev/) or jump into our [FifthTry Discord 
+Feel free to check [our documentation](https://fastn.dev/) or jump into our [FifthTry Discord 
 server](https://discord.gg/bucrdvptYd).
 
 ## License
