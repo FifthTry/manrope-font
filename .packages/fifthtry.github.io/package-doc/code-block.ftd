@@ -1,0 +1,349 @@
+-- import: fpm
+-- import: fifthtry.github.io/package-doc/assets
+-- import: fifthtry.github.io/package-doc/typography as tf
+
+
+
+
+-- ftd.color code-bg-light:
+light: #2b303b
+dark: #18181b
+
+-- ftd.color code-bg-dark:
+light: #18181b
+dark: #2b303b
+
+
+
+
+
+-- ftd.column:
+;;id: code-wrap
+height: hug-content
+width: fill-container
+spacing.fixed.px: 20
+padding-horizontal.px: 24
+padding-vertical.px: 24
+background.solid: $inherited.colors.background.base
+
+-- package: Code Block Component for FPM Packages
+name: fifthtry.github.io/code-block
+
+This package can be used to show source code in any document.
+
+-- ftd.text: Output on browser will as below:
+padding-top.px: 20
+color: $inherited.colors.text-strong
+
+-- h2: How to add: onto your project:
+
+-- ftd.column:
+width.fixed.percent: 50
+
+-- code: Add this to FPM.ftd
+lang: ftd
+
+\-- fpm.dependency: fifthtry.github.io/code-block as cb
+
+-- code: Then use the component:
+lang: ftd
+
+\-- fpm.dependency: fifthtry.github.io/code-block as cb
+
+\-- import: cb
+
+\-- cb.code:
+if: $caption is not null
+caption: $caption
+lang: $lang
+
+$body
+
+-- end: ftd.column
+
+-- tf.markdown:
+
+- `lang` is the file name extension.
+
+- `caption` is the the title/caption of code block.
+
+- `lang` is the file name extension.
+
+- `body` is main body of the code block.
+
+
+-- h2: Usage: how to write
+
+-- code: How to write code block of image shown above
+lang: ftd
+
+\-- cb.code: hello world ftd
+lang: ftd
+
+\-- string msg: hello world
+\-- ftd.text: $msg
+
+-- h2: Output: of above code snippet
+
+-- code: hello world ftd
+lang: ftd
+
+\-- string msg: hello world
+\-- ftd.text: $msg
+
+-- end: ftd.column
+
+
+
+
+
+
+
+
+
+
+-- component code:
+optional caption caption:
+body body:
+string lang:
+
+-- ftd.column:
+padding-bottom.px: 12
+padding-top.px: 12
+width: fill-container
+
+-- ftd.text: $code.caption
+if: {$code.caption != NULL}
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+width: fill-container
+background.solid: $inherited.colors.background.step-2
+padding-top.px: 10
+padding-bottom.px: 10
+padding-left.px: 20
+padding-right.px: 20
+border-top-left-radius.px: 4
+border-top-right-radius.px: 4
+
+-- ftd.code:
+if: {$ftd.dark-mode}
+text: $code.body
+lang: $code.lang
+width: fill-container
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+padding-top.px: 10
+padding-left.px: 20
+padding-bottom.px: 10
+padding-right.px: 20
+background.solid: $code-bg-dark
+border-top-left-radius.px if {$code.caption == NULL}: 4
+border-top-right-radius.px if {$code.caption == NULL}: 4
+border-bottom-left-radius.px: 4
+border-bottom-right-radius.px: 4
+border-width.px: 1
+border-color: $code-bg-dark
+overflow-x: auto
+
+-- ftd.code:
+if: {!$ftd.dark-mode}
+text: $code.body
+lang: $code.lang
+width: fill-container
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+padding-top.px: 10
+padding-left.px: 20
+padding-bottom.px: 10
+padding-right.px: 20
+background.solid: $code-bg-light
+border-top-left-radius.px if {$code.caption == NULL}: 4
+border-top-right-radius.px if {$code.caption == NULL}: 4
+border-bottom-left-radius.px if {$code.caption == NULL}: 4
+border-bottom-right-radius.px if {$code.caption == NULL}: 4
+border-color: $code-bg-light
+border-width.px: 1
+overflow-x: auto
+
+-- end: ftd.column
+
+-- end: code
+
+
+
+
+
+
+
+
+
+
+-- component h1:
+caption title:
+optional body body:
+boolean open: true
+;;append-at: inner
+
+-- ftd.column:
+width: fill-container
+region: h1
+padding-left.px: 20
+border-left.px: 5
+border-color: $inherited.colors.cta-secondary.text
+;;move-left: 25
+margin-bottom.px: 30
+;;$on-click$: toggle $open
+
+-- ftd.text: $h1.title
+;;caption $title:
+;;region: title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+padding-bottom.px: 8
+
+-- end: ftd.column
+
+-- end: h1
+
+
+
+
+
+
+
+
+
+
+-- component h2:
+caption title:
+optional body body:
+
+-- ftd.column:
+width: fill-container
+region: h2
+padding-bottom.px: 12
+
+-- ftd.text: $h2.title
+;;caption $title:
+;;region: title
+role: $inherited.types.heading-small
+color: $inherited.colors.text
+padding-bottom.px: 8
+padding-top.px: 16
+
+-- end: ftd.column
+
+-- end: h2
+
+
+
+
+
+
+
+
+
+
+-- component package:
+caption title:
+string name:
+body body:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 20
+;;open: true
+
+-- ftd.row:
+anchor: window
+right.px: 50
+bottom.px: 100
+padding.px: 10
+background.solid: $inherited.colors.background.base
+border-width.px: 1
+border-color: $inherited.colors.text
+border-radius.px: 4
+;;z-index: 99999999999999
+
+-- toggle:
+
+-- end: ftd.row
+
+-- tf.h0: $package.title
+
+-- kv: Package Name
+value: $package.name
+
+-- tf.markdown:
+
+$package.body
+
+-- end: ftd.column
+
+-- end: package
+
+
+
+
+
+
+
+
+
+
+-- component toggle:
+
+-- ftd.row:
+
+-- ftd.image:
+if: {!$ftd.dark-mode}
+src: $assets.files.static.switch-mode-icon.svg
+height.fixed.px: 18
+;;$on-click$: message-host enable-dark-mode
+align-self: center
+
+-- ftd.image:
+if: {$ftd.dark-mode}
+src: $assets.files.static.switch-mode-icon-dark.svg
+height.fixed.px: 18
+;;$on-click$: message-host enable-light-mode
+align-self: center
+
+-- end: ftd.row
+
+-- end: toggle
+
+
+
+
+
+
+
+
+
+
+-- component kv:
+caption title:
+string value:
+
+-- ftd.row:
+padding.px: 10
+border-width.px: 1
+border-color: $inherited.colors.text
+spacing.fixed.px: 7
+width: fill-container
+background.solid: $inherited.colors.background.base
+border-radius.px: 4
+
+-- ftd.text: $kv.title
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+
+-- ftd.text: $kv.value
+color: $inherited.colors.text
+role: $inherited.types.copy-regular
+;;move-down: 2
+
+-- end: ftd.row
+
+-- end: kv

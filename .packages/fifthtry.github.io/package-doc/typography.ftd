@@ -1,0 +1,363 @@
+-- import: fpm
+-- import: fifthtry.github.io/package-doc/doc as pd
+
+
+
+
+
+-- ftd.column:
+width: fill-container
+padding-horizontal.px: 50
+padding-horizontal.px if { ftd.device == "mobile" }: 20
+padding-bottom.px: 200
+background.solid: $inherited.colors.background.base
+
+-- pd.package: Typography
+name: fifthtry.github.io/typography
+
+This component can be used to add heading. It has various heading namely h0, h1 and h2.Somewhat similar to heading tag in html. The variation of the numbers (0, 1 and 2) directly relates to the relevance that the content has in the interface. The lower the number, more prominence, and the importance it will have. So it helps creating the hierarchy of information.
+
+/-- ft.code: Add this to your FPM.ftd
+lang: ftd
+
+/-- fpm.dependency: fifthtry.github.io/typography
+
+-- pd.component: h2
+name: fifthtry.github.io/typography.h2
+
+This is used to add third-level heading in hierarchy of content.
+It expects a title in caption, optional string type data in body and
+afterwards add any number of components.
+
+-- pd.hidden-code: How to use
+
+/-- h2: Heading Medium
+
+/<Body text here> // This is optional
+
+/-- <other-components>:
+
+-- pd.component: h1
+name: fifthtry.github.io/typography.h1
+
+This is used to add second-level heading in hierarchy of content i.e. the big title.
+It expects a title in caption, optional string type data in body and
+afterwards add any number of components.
+
+-- pd.hidden-code: How to use
+
+/-- h1: Heading Large
+
+/<Body text here> // This is optional
+
+/-- <other-components>:
+
+-- pd.component: h0
+name: fifthtry.github.io/typography.h0
+
+This is used to add the most prominent heading i.e. the Heading Hero.
+It expects a title in caption, optional string type data in body and
+afterwards add any number of components.
+
+-- pd.hidden-code: How to use
+
+/-- h0: Heading Hero
+
+/<Body text here> // This is optional
+
+/-- <other-components>:
+
+/-- h0: Heading Hero
+
+Body text here in h0
+
+/-- h1: Heading Large
+
+Body text here in h1
+
+/-- h2: Heading Medium
+
+Body text here in h2
+
+/-- h3: Heading Small
+
+Body text here in h3
+
+-- pd.output: Basic usage example of Typography
+
+-- h0: Heading Hero
+
+Body text is here in h1
+
+-- h1: Heading Large
+
+Body text is here in h1
+
+-- h2: Heading Medium
+
+Body text is here in h2
+
+-- h3: Heading Small
+
+Body text is here in h3
+
+-- markdown:
+
+this is markdown body
+
+-- end: ftd.column
+
+
+
+
+
+
+
+
+
+
+-- component h0:
+caption title:
+optional body body:
+
+-- ftd.column:
+width: fill-container
+region: h1
+;;append-at: inner -- TODO FTD 0.3
+margin-top.px: 32
+margin-bottom.px: 16
+
+-- ftd.text: $h0.title
+role: $inherited.types.heading-hero
+color: $inherited.colors.text-strong
+padding-bottom.px: 16
+padding-top.px: 8
+
+-- ftd.column:
+width: fill-container
+margin-bottom.px if {h0.body != NULL}: -26
+
+-- markdown:
+if: { h0.body != NULL }
+body: $h0.body
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: h0
+
+
+
+
+
+
+
+
+
+
+
+-- component h1:
+caption title:
+optional body body:
+
+-- ftd.column:
+;;append-at: inner -- TODO FTD 0.3
+width: fill-container
+region: h1
+margin-top.px: 32
+margin-bottom.px: 16
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 20
+
+-- ftd.text: $h1.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text-strong
+padding-bottom.px: 16
+padding-top.px: 8
+
+-- end: ftd.row
+
+-- ftd.column:
+;;id: inner -- TODO FTD 0.3
+width: fill-container
+margin-bottom.px if {$h1.body != NULL}: -26
+
+-- markdown:
+if: { h1.body != NULL }
+body: $h1.body
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: h1
+
+
+
+
+
+
+
+
+
+
+-- component h2:
+caption title:
+optional body body:
+
+-- ftd.column:
+width: fill-container
+region: h2
+;;append-at: inner -- TODO FTD 0.3
+margin-top.px: 32
+margin-bottom.px: 16
+
+-- ftd.text: $h2.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text-strong
+padding-bottom.px: 16
+padding-top.px: 8
+
+-- ftd.column:
+;;id: inner -- TODO FTD 0.3
+width: fill-container
+margin-bottom.px if {$h2.body != NULL}: -26
+
+-- markdown:
+if: { h2.body != NULL }
+body: $h2.body
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: h2
+
+
+
+
+
+
+
+
+
+
+-- component h3:
+caption title:
+optional body body:
+
+-- ftd.column:
+width: fill-container
+region: h3
+;;append-at: inner -- TODO FTD 0.3
+margin-top.px: 32
+margin-bottom.px: 16
+
+-- ftd.text: $h3.title
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+padding-bottom.px: 16
+padding-top.px: 8
+
+-- ftd.column:
+;;id: inner -- TODO FTD 0.3
+width: fill-container
+margin-bottom.px if {$h3.body != NULL}: -26
+
+-- markdown:
+if: { h3.body != NULL }
+body: $h3.body
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: h3
+
+
+
+
+
+
+
+
+
+
+-- component markdown:
+body body:
+optional boolean collapsed:
+optional caption title:
+optional boolean two_columns:
+
+-- ftd.text: 
+text: $markdown.body
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+margin-bottom.px: 26
+
+-- end: markdown
+
+
+
+
+
+
+
+
+
+
+-- component key-value:
+caption key:
+optional string value:
+string default:
+
+-- ftd.row:
+margin-bottom.px: 10
+spacing.fixed.px: 2
+
+-- ftd.text: $key-value.key
+
+-- ftd.text: $key-value.value
+if: {$key-value.value != NULL}
+
+-- ftd.text: $key-value.default
+if: {$key-value.value = NULL}
+
+-- end: ftd.row
+
+-- end: key-value
+
+
+
+
+
+
+
+
+
+
+-- component h2-text:
+caption title:
+optional body body:
+
+-- ftd.column:
+width: fill-container
+region: h2
+margin-top.px: 32
+margin-bottom.px: 16
+;;boolean open: true -- TODO FTD 0.3
+
+-- ftd.text:
+text: $h2-text.title
+role: $inherited.types.heading-small
+color: $inherited.colors.text
+padding-bottom.px: 8
+padding-top.px: 16
+;;$on-click$: toggle $open -- TODO FTD 0.3
+
+-- end: ftd.column
+
+-- end: h2-text
