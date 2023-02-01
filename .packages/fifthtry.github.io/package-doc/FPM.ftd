@@ -1,0 +1,20 @@
+-- import: fpm
+
+-- fpm.package: fifthtry.github.io/package-doc
+download-base-url: https://raw.githubusercontent.com/fifthtry/package-doc/main
+
+
+-- fpm.dependency: fifthtry.github.io/app-switcher 
+
+
+-- fpm.app: Todos for Family
+mount-point: /todos/
+package: kameri-app.herokuapp.com
+end-point: https://kameri-service.herokuapp.com
+readers: fpm-fans
+/config: db_url=$ENV.DB_URL
+/config: name=FifthTry members
+
+
+
+
