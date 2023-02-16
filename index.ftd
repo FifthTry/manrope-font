@@ -39,16 +39,16 @@ padding-horizontal.px if {ftd.device == "mobile"}: 20
 background.solid: $inherited.colors.background.base
 
 
--- pd.package: manrope - fpm font
+-- pd.package: Manrope - fpm font
 name: fifthtry.github.io/manrope-font
 
-This component consist of Google manrope font with all it's styles from Thin-100 to Bold-700 Italic.
+This component consist of Google Manrope font with all its styles from ExtraLight 200 to ExtraBold 800.
 
 
--- pd.component: manrope - fpm font
+-- pd.component: Manrope - fpm font
 name: https://github.com/FifthTry/manrope-font
 
-This component consist of Google manrope font with all it's styles from Thin-100 to Bold-700 Italic.
+This component consist of Google Manrope font with all its styles from ExtraLight 200 to ExtraBold 800.
 
 
 
@@ -62,13 +62,13 @@ include fifthtry.github.io/manrope-font package into fastn.ftd file
 
 Inside your .ftd file to change for any specific token use:
 
-\-- fpm.type.headline-small.font: $manrope.fonts.manrope
+\-- inherited.types.headline-small.font: $manrope.fonts.Manrope
 
 \-- ftd.text:
-role: $fpm.type.headline-small
+role: $inherited.types.headline-small
 
 
--- tf.h2: `manrope-font` hairline 18px:
+-- tf.h2: `Manrope-font` hairline 18px:
 
 -- ftd.text: MANIMBANG manowo ngakoni marang martabat alamiah sarta kang.    
 role: $small-heading
@@ -76,7 +76,7 @@ color: $inherited.colors.text-strong
 margin-bottom.px: 24
 ;;style: hairline
 
--- tf.h2: `manrope-font` hairline italic 18px:
+-- tf.h2: `Manrope-font` hairline italic 18px:
 
 -- ftd.text: MANIMBANG manowo ngakoni marang martabat alamiah sarta kang.    
 role: $small-heading
@@ -84,7 +84,7 @@ color: $inherited.colors.text-strong
 margin-bottom.px: 24
 ;;style: hairline italic
 
--- tf.h2: `manrope-font` light 18px:
+-- tf.h2: `Manrope-font` light 18px:
 
 -- ftd.text: MANIMBANG manowo ngakoni marang martabat alamiah sarta kang.    
 role: $small-heading
@@ -92,7 +92,7 @@ color: $inherited.colors.text-strong
 margin-bottom.px: 24
 ;;style: light
 
--- tf.h2: `manrope-font` light italic 18px:
+-- tf.h2: `Manrope-font` light italic 18px:
 
 -- ftd.text: MANIMBANG manowo ngakoni marang martabat alamiah sarta kang.    
 role: $small-heading
@@ -100,7 +100,7 @@ color: $inherited.colors.text-strong
 margin-bottom.px: 24
 ;;style: light italic
 
--- tf.h2: `manrope-font` regular 18px:
+-- tf.h2: `Manrope-font` regular 18px:
 
 -- ftd.text: MANIMBANG manowo ngakoni marang martabat alamiah sarta kang.    
 role: $small-heading
@@ -108,7 +108,7 @@ color: $inherited.colors.text-strong
 margin-bottom.px: 24
 ;;style: regular
 
--- tf.h2: `manrope-font` regular strike through 18px:
+-- tf.h2: `Manrope-font` regular strike through 18px:
 
 -- ftd.text: MANIMBANG manowo ngakoni marang martabat alamiah sarta kang.  
 role: $small-heading
@@ -116,7 +116,7 @@ color: $inherited.colors.text-strong
 margin-bottom.px: 24
 ;;style: regular strike
 
--- tf.h2: `manrope-font` regular underline 18px:
+-- tf.h2: `Manrope-font` regular underline 18px:
 
 -- ftd.text: MANIMBANG manowo ngakoni marang martabat alamiah sarta kang.  
 role: $small-heading
@@ -124,7 +124,7 @@ color: $inherited.colors.text-strong
 margin-bottom.px: 24
 ;;style: regular underline
 
--- tf.h2: `manrope-font` regular italic 18px:
+-- tf.h2: `Manrope-font` regular italic 18px:
 
 -- ftd.text: MANIMBANG manowo ngakoni marang martabat alamiah sarta kang.  
 role: $small-heading
@@ -132,7 +132,7 @@ color: $inherited.colors.text-strong
 margin-bottom.px: 24
 ;;style: regular italic
 
--- tf.h2: `manrope-font` bold 18px:
+-- tf.h2: `Manrope-font` bold 18px:
 
 -- ftd.text: MANIMBANG manowo ngakoni marang martabat alamiah sarta kang.  
 role: $small-heading
@@ -140,7 +140,7 @@ color: $inherited.colors.text-strong
 margin-bottom.px: 24
 ;;style: bold
 
--- tf.h2: `manrope-font` bold italic 18px:
+-- tf.h2: `Manrope-font` bold italic 18px:
 
 -- ftd.text: MANIMBANG manowo ngakoni marang martabat alamiah sarta kang.  
 role: $small-heading
@@ -148,7 +148,7 @@ color: $inherited.colors.text-strong
 margin-bottom.px: 24
 ;;style: bold italic
 
--- tf.h2: `manrope-font` heavy 18px:
+-- tf.h2: `Manrope-font` heavy 18px:
 
 -- ftd.text: MANIMBANG manowo ngakoni marang martabat alamiah sarta kang.  
 role: $small-heading
@@ -156,7 +156,7 @@ color: $inherited.colors.text-strong
 margin-bottom.px: 24
 ;;style: heavy
 
--- tf.h2: `manrope-font` heavy italic 18px:
+-- tf.h2: `Manrope-font` heavy italic 18px:
 
 -- ftd.text: MANIMBANG manowo ngakoni marang martabat alamiah sarta kang.  
 role: $small-heading
@@ -164,7 +164,7 @@ color: $inherited.colors.text-strong
 margin-bottom.px: 24
 ;;style: heavy italic
 
--- tf.h2: `manrope-font` heading regular 48px:
+-- tf.h2: `Manrope-font` heading regular 48px:
 
 -- ftd.text: MANIMBANG manowo ngakoni marang martabat alamiah sarta kang.  
 role: $large-heading
