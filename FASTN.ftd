@@ -1,7 +1,6 @@
 -- import: fastn
 
 -- fastn.package: fifthtry.github.io/manrope-font
-download-base-url: https://raw.githubusercontent.com/fifthtry/manrope-font/main
 
 -- fastn.dependency: fifthtry.github.io/package-doc
 
